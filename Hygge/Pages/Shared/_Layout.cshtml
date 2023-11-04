@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project: Hygge</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/fonts.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Hygge.styles.css" asp-append-version="true" />
+    <link rel="icon" type="image/x-icon" href="~/img/icons/favicon.svg">
+</head> 
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light nav-bg mb-3">
+            <div class="container">
+                <a class="navbar-brand header-width" asp-area="" asp-page="/Index">
+                    <img src="~/img/logo_lg.svg" alt="logo">
+                </a>
+                <div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1 js-navbar-collapse ">
+                            <span class="d-flex flex-column mx-auto">
+                                <li class="nav-item text-center">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                                </li>
+                                <li class="nav-item text-center">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Categories</a>
+                                </li>
+                                <li class="nav-item text-center">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Clients/Index">Clients</a>
+                                </li>
+                                <li class="nav-item text-center">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">About</a>
+                                </li>
+                                <li class="nav-item text-center">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Contact</a>
+                                </li>
+                            </span>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-width d-flex justify-content-between align-content-center">
+                    <a asp-area="" asp-page="/Index">
+                        <img src="~/img/icons/search.svg" alt="search"/>
+                    </a>
+                    <a asp-area="" asp-page="/Index">
+                        <img src="~/img/icons/icon_indicator.svg" alt="basket"/>
+                    </a>
+                    <a asp-area="" asp-page="/Clients/SignUp">
+                        <img src="~/img/icons/profile.svg" alt="profile"/>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </header>
+    <div class="container first-container-margin">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="container my-margin-top-lg footer text-muted d-flex justify-content-between align-baseline w-100">
+        <div class="container d-flex flex-column">
+            <img src="~/img/logo_lg.svg" alt="logo"/>
+            <p>© 2023 - All rights reserved</p>
+            <div>
+                <i class="fa-brands fa-instagram social-icon"></i>
+                <i class="fa-brands fa-x-twitter social-icon"></i>
+                <i class="fa-brands fa-facebook-f social-icon"></i>
+            </div>
+        </div>
+
+        <ul id="categories-container">
+            <li>
+                <h3>Categories</h3>
+            </li>
+        </ul>
+        <ul id="legal-container">
+            <li>
+                <h3>Legal</h3>
+            </li>
+        </ul>
+        <ul id="company-container">
+            <li>
+                <h3>Company</h3>
+            </li>
+        </ul>
+
+        <template id="categories-template">
+            <li class="category"></li>
+        </template>
+        <template id="legal-template">
+            <li class="legal"></li>
+        </template>
+        <template id="company-template">
+            <li class="company"></li>
+        </template>
+    </footer>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/ea231867c7.js" crossorigin="anonymous"></script>
+
+    <script src="~/js/header.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

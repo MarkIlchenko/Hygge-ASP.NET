@@ -1,0 +1,47 @@
+﻿@page
+@model Hygge.Pages.Clients.IndexModel
+@{
+}
+
+<main>
+    <h2>List of Clients</h2>
+    <a class="btn btn-primary btn-sm" href='/Clients/Create'>New Client</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Quarantee</th>
+            <th>Discount</th>
+            <th>Category</th>
+            <th>Sku</th>
+            <th>Img</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.listClient)
+            {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.title</td>
+                    <td>@item.brand</td>
+                    <td>@item.price</td>
+                    <td>@item.guarantee</td>
+                    <td>@item.discount</td>
+                    <td>@item.category</td>
+                    <td>@item.sku</td>
+                    <td>
+                        <img src="@item.img" alt="img" />
+                    </td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/Clients/Edit?id=@item.id">Edit</a>
+                        <a class="btn btn-primary btn-sm" href="/Clients/Delete?id=@item.id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <img src="https://photos.app.goo.gl/PSyLZiRzk8eQt2jX9" />
+</main>

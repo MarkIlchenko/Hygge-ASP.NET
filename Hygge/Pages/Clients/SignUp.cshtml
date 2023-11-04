@@ -1,0 +1,97 @@
+﻿@page
+@model Hygge.Pages.Clients.SignUpModel
+@{
+}
+
+<link rel="stylesheet" href="~/css/signup.css">
+
+<section class="container my-margin-top-lg">
+    
+
+    <form id="registration-form" method="post" class="my-margin-top-sm container-sm registration-form ">
+        <div class="d-flex flex-column w-100">
+            <div>
+                <p class="secondary-text">- Sign Up</p>
+                <h1>Create Account</h1>
+            </div>
+            @* First Div *@
+            <div class="inputs-wrapper my-margin-top-sm first-inputs-wrapper d-flex flex-column">
+                <div class="input-container">
+                    <input type="text"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        value=""
+                        aria-labelledby="label-email" />
+                    <label class="label" for="email" id="label-email">
+                        <div class="text">Your email</div>
+                    </label>
+                </div>
+
+                <div class="input-container">
+                    <input type="text"
+                        class="form-control"
+                        id="password"
+                        name="password"
+                        value=""
+                        aria-labelledby="label-password" />
+                    <label class="label" for="password" id="label-password">
+                        <div class="text">Your password</div>
+                    </label>
+                </div>
+            </div>
+            @* Second Div *@
+            <div class="inputs-wrapper my-margin-top-sm unvisible d-flex flex-column">
+                <div class="input-container">
+                    <input type="text"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        value=""
+                        aria-labelledby="label-name" />
+                    <label class="label" for="name" id="label-name">
+                        <div class="text">Your name</div>
+                    </label>
+                </div>
+
+                <div class="input-container">
+                    <input type="text"
+                        class="form-control"
+                        id="phone"
+                        name="phone"
+                        value=""
+                        aria-labelledby="label-phone" />
+                    <label class="label" for="phone" id="label-phone">
+                        <div class="text">Your phone</div>
+                    </label>
+                </div>
+            </div>
+
+            
+            <div class="progress-wrapper w-100">
+                <div class="progress-indicator"></div>
+                <div class="progress-indicator unvisible green-background"></div>
+            </div>
+
+            <div class="option-container">
+                <input type="radio" name="notifications" id="notifications" class="notifications">
+                <label for="notifications">I have read and agree to <span class="terms-notifications">terms & conditions </span></label>
+            </div>
+
+
+            @* Buttons Div *@
+            <div class="button-wrapper d-flex justify-content-between">
+                <button type="button" class="btn btn-primary w-100 js-submit-btn" onclick="submitForm()">Submit</button>
+                <p class="next-button w-100 text-center ml-12px">Next</p>
+            </div>
+        </div>
+
+        <div class="alert-success-template"></div>
+        <div class="alert-warning-template"></div>
+        <div class="alert-success"></div>
+
+        
+    </form>
+</section>
+
+<script src="~/js/signup.js"></script>

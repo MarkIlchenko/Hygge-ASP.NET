@@ -1,0 +1,321 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var categoriesTitles = new List<string> { "On Sale", "Featured", "Masks", "Eye Care", "Moisturizers", "Treatments", "Night Care", "Sun Care" };
+    var categoriesTitlesB = new List<string> { "On Sale2", "Featured", "Masks", "Eye Care", "Moisturizers", "Treatments", "Night Care", "Sun Care" };
+    var categoriesTitlesC = new List<string> { "On Sale3", "Featured", "Masks", "Eye Care", "Moisturizers", "Treatments", "Night Care", "Sun Care" };
+    var categoriesIcons = new List<string> { "onsale.svg", "featured.svg", "masks.svg", "eyecare.svg", "moisturizers.svg", "treatments.svg", "nightcare.svg", "suncare.svg" };
+}
+
+
+    <div class="banner w-100">
+        <div class="banner-text">
+            <p class="secondary-text">- Skincare Products</p>
+            <h1>We Offer the Best<br> Products for your Skin</h1>
+            <button class="prm-btn mt-5">Shop Now</button>
+        </div>
+        <img src="~/img/banners/banner_1.svg" class="banner-img" alt="banner">
+    </div>
+
+    <section class="my-margin-top-lg js-slider-cont">
+        <!-- Container for the header section -->
+        <div class="d-flex justify-content-between align-items-center mt-5">
+            <div>
+                <!-- Secondary text for the categories section -->
+                <p class="secondary-text">- The Categories</p>
+                <!-- Heading -->
+                <h1>Browse by Category</h1>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Previous button/slider control -->
+                <button class="slider-control-prev" type="button">
+                    <img src="~/img/buttons/prevbtn.svg" alt="Prev" class="prev-btn" />
+                </button>
+                <!-- Next button/slider control -->
+                <button class="slider-control-next" type="button">
+                    <img src="~/img/buttons/nextbtn.svg" alt="Next" class="next-btn" />
+                </button>
+                @* <div class="slider-indicators" style="width: 120px">
+                    <span class="slider-indicator active"></span>
+                    <span class="slider-indicator"></span>
+                    <span class="slider-indicator"></span>
+                    <span class="slider-indicator"></span>
+                </div> *@
+            </div>
+        </div>
+        <!-- Slider -->
+        <div class="slider my-margin-top-md" id="slider1">
+            <div class="slider-container">
+                <div class="slider-item d-flex justify-content-between">
+                    @foreach (var category in categoriesTitles)
+                    {
+                        var index = categoriesTitles.IndexOf(category);
+                        var categoryIcon = categoriesIcons[index];
+
+                        <div class="category-container d-flex flex-column align-items-center">
+                            <img src="~/img/icons/@categoryIcon" class="category-icon" alt="icon">
+                            <p class="custom-h5 mt-2">@category</p>
+                        </div>
+                    }
+                </div>
+                <div class="slider-item d-flex justify-content-between">
+                    @foreach (var category in categoriesTitles)
+                    {
+                        var index = categoriesTitles.IndexOf(category);
+                        var categoryIcon = categoriesIcons[index];
+
+                        <div class="category-container d-flex flex-column align-items-center">
+                            <img src="~/img/icons/@categoryIcon" class="category-icon" alt="icon">
+                            <p class="custom-h5 mt-2">@category</p>
+                        </div>
+                    }
+                </div>
+                <div class="slider-item d-flex justify-content-between">
+                @foreach (var category in categoriesTitlesB)
+                    {
+                    var index = categoriesTitlesB.IndexOf(category);
+                        var categoryIcon = categoriesIcons[index];
+
+                        <div class="category-container d-flex flex-column align-items-center">
+                            <img src="~/img/icons/@categoryIcon" class="category-icon" alt="icon">
+                            <p class="custom-h5 mt-2">@category</p>
+                        </div>
+                    }
+                </div>
+                <div class="slider-item d-flex justify-content-between">
+                    @foreach (var category in categoriesTitlesC)
+                    {
+                    var index = categoriesTitlesC.IndexOf(category);
+                        var categoryIcon = categoriesIcons[index];
+
+                        <div class="category-container d-flex flex-column align-items-center">
+                            <img src="~/img/icons/@categoryIcon" class="category-icon" alt="icon">
+                            <p class="custom-h5 mt-2">@category</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        
+        </div>
+    </section>
+
+    <section class="my-margin-top-lg  js-slider-cont">
+        <div class="d-flex justify-content-between align-items-center mt-5">
+            <div>
+                <p class="secondary-text">- Our Products</p>
+                <h1>Explore our Products</h1>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <button class="slider-control-prev" type="button">
+                    <img src="~/img/buttons/prevbtn.svg" alt="Prev" class="prev-btn" />
+                </button>
+                <button class="slider-control-next" type="button">
+                    <img src="~/img/buttons/nextbtn.svg" alt="Next" class="next-btn" />
+                </button>
+            </div>
+        </div>
+        <div class="slider mt-5" id="slider2">
+            <div class="slider-container">
+                <div class="slider-item">
+                    <div class="d-flex justify-content-between flex-wrap">
+                        @foreach (var item in Model.listClient)
+                        {
+                            <article class="my-card">
+                                <img src="@item.image_path" alt="img" class="my-card-img">
+                                <div class="my-card-body mt-3">
+                                    <h3>@item.title</h3>
+                                    <div class="d-flex justify-content-between align-content-center">
+                                        <span class="my-auto my-category care" value="@item.category">@item.category</span>
+                                        <div class="d-flex justify-content-between align-content-center">
+                                            <h5 style="opacity: 24%; text-decoration-line: line-through;" class="my-auto my-discount">@item.discount</h5>
+                                            <h4 class="my-auto">@item.price</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        }
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="d-flex justify-content-between flex-wrap">
+                        @foreach (var item in Model.listClient)
+                        {
+                            <article class="my-card">
+                            <img src="@item.image_path" alt="img" class="my-card-img">
+                                <div class="my-card-body mt-3">
+                                    <h3>@item.title</h3>
+                                    <div class="d-flex justify-content-between align-content-center">
+                                        <span class="my-auto my-category care" value="@item.category">@item.category</span>
+                                        <div class="d-flex justify-content-between align-content-center">
+                                            <h5 style="opacity: 24%; text-decoration-line: line-through;" class="my-auto my-discount">@item.discount</h5>
+                                            <h4 class="my-auto">@item.price</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </section>
+
+    <section class="my-margin-top-lg text-center">
+        <p class="secondary-text">- Why Us</p>
+        <h1>Why People Choose Us</h1>
+
+        <div class="d-flex my-margin-top-md justify-content-between align-content-center">
+            <article class="d-flex flex-column justify-content-center feature">
+                <img src="~/img/icons/easyreturns.svg" alt="icon" class="mx-auto feature-icon">
+                <h3 class="mt-3 mb-1">Easy Returns</h3>
+                <p>Our return policy is simple and that is why customers love our shop.</p>
+            </article>
+            <article class="d-flex flex-column justify-content-center feature">
+                <img src="~/img/icons/customerservice.svg" alt="icon" class="mx-auto feature-icon">
+                <h3 class="mt-3 mb-1">Customer Service</h3>
+                <p>We offer amazing customer service no matter what happens.</p>
+            </article>
+            <article class="d-flex flex-column justify-content-center feature">
+                <img src="~/img/icons/highquality.svg" alt="icon" class="mx-auto feature-icon">
+                <h3 class="mt-3 mb-1">High Quality</h3>
+                <p>All of our products go through very strict inspection before we dispatch them.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="d-flex banner justify-content-between my-margin-top-lg js-slider-cont">
+        <div class="my-auto">
+            <p class="secondary-text">- Our Reviews</p>
+            <h1>What our Customers<br> are Saying</h1>
+        </div>
+        <div style="width: fit-content;" class="my-margin-top-md">
+            <div class="slider" id="slider3">
+                <div class="slider-container" style="height: 240px; width: 300px">
+                    <div class="slider-item container-sm" style="height: fit-content;">
+                        @foreach (var item in Model.messageClient)
+                        {
+                            @if (item.id == "1")
+                            {
+                                <article class="my-card d-flex flex-column">
+                                    <img src="@item.img" alt="avatar" class="review-img">
+                                    <h3>
+                                        @item.name
+                                    </h3>
+                                    <p>@item.mesage</p>
+                                </article>
+                            }
+                        }
+                    </div>
+                    <div class="slider-item container-sm" style="height: fit-content; width: fit-content;">
+                        @foreach (var item in Model.messageClient)
+                        {
+                            @if (item.id == "2")
+                            {
+                                <article class="my-card d-flex flex-column">
+                                    <img src="@item.img" alt="avatar" class="review-img">
+                                    <h3>
+                                        @item.name
+                                    </h3>
+                                    <p>@item.mesage</p>
+                                </article>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="slider-indicators" style="width: 120px">
+                    <span class="slider-indicator active"></span>
+                    <span class="slider-indicator"></span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-5" style="width: 72px">
+                    <button class="slider-control-prev" type="button">
+                        <img src="~/img/buttons/prevbtn.svg" alt="Prev" class="prev-btn" />
+                    </button>
+                    <button class="slider-control-next" type="button">
+                        <img src="~/img/buttons/nextbtn.svg" alt="Next" class="next-btn" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="my-margin-top-lg">
+        <div>
+            <p class="secondary-text">- Our Blog</p>
+            <h1>Check Out our Blog</h1>
+        </div>
+        <div class="d-flex justify-content-between flex-wrap my-margin-top-md">
+            @foreach (var item in Model.articlesClient)
+            {
+                var index = Model.articlesClient.IndexOf(item);
+
+                @if(item == Model.articlesClient.First())
+                {
+                    <article class="d-flex my-articles my-articles-lg flex-column mb-5 js-article" style="width: fit-content">
+                        <img src="@item.img" alt="img" style="max-width: 100%;">
+                        <h2 style="width: fit-content;" class="mt-4">
+                            @item.title
+                        </h2>
+                        <span class="recent-article-visible mt-2">Resent</span>
+                        <p class="item-category">@item.category</p>
+                    </article>
+                }
+                else if (index >= 1 && index <= 4)
+                {
+                    if (index ==1) {
+                        <article class="d-flex my-articles-sm-first mb-5 flex-column js-article" style="width: fit-content">
+                            <img src="@item.img" alt="img" style="max-width: 100%;">
+                            <h2 style="width: fit-content;" class="mt-4">
+                                @item.title
+                            </h2>
+                            <p class="item-category">@item.category</p>
+                        </article>
+                    } else {
+                        <article class="d-flex my-articles-sm mb-5 flex-column js-article" style="width: fit-content">
+                            <img src="@item.img" alt="img" style="max-width: 100%;">
+                            <h2 style="width: fit-content;" class="mt-4">
+                                @item.title
+                            </h2>
+                            <p class="item-category">@item.category</p>
+                        </article>
+                    }
+                } else
+                {
+                    <article class="d-flex my-articles flex-column js-article" style="width: fit-content">
+                        <img src="@item.img" alt="img" style="max-width: 100%;">
+                        <h2 style="width: fit-content;" class="mt-4">
+                            @item.title
+                        </h2>
+                        <p class="item-category">@item.category</p>
+                    </article>
+                }
+            }
+        </div>
+    </section>
+    <section class="my-margin-top-lg banner">
+        <div>
+            <p class="secondary-text text-center">- Our Newsletter</p>
+            <h1 class="text-center">Sign Up to our Newsletter</h1>
+        </div>
+        
+        <div class="alert-warning-template"></div>
+        
+        <form id="newsletter-form" method="post" class="my-margin-top-sm newsletter-form w-100">
+            <div class="mb-3 w-75 d-flex flex-nowrap my-center">
+                <div class="w-75 d-flex my-center">
+                    <input type="text" class="form-control d-flex" name="email" placeholder="Enter your email" value="@Model.newsletter.email" />
+                </div>
+                <button type="button" class="btn btn-primary btn-margin" onclick="submitForm()">Submit</button>
+            </div>
+
+            <div class="alert-success-template"></div>
+            <div class="alert-success"></div>
+
+            
+        </form>
+    </section>
+
+<script src="~/js/slider.js"></script>
+<script src="~/js/homepage.js"></script>

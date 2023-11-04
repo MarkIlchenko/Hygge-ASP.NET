@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap');
+
+:root {
+    --my-primary-color: #1A202C;
+    --my-primary-font: Montserrat;
+    --my-primary-font-style: normal;
+}
+
+h1 {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 40px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 700;
+    line-height: 56px;
+}
+
+h2 {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 32px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 700;
+    line-height: 48px;
+}
+
+.my-margin-top-lg {
+    margin-top: 144px;
+}
+
+.my-margin-top-md {
+    margin-top: 72px;
+}
+
+.my-margin-top-sm {
+    margin-top: 48px;
+}
+
+.custom-h2 {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 32px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 600;
+    line-height: 48px;
+}
+
+h3 {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 24px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.custom-h3 {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 24px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 600;
+    line-height: 40px;
+}
+
+h4 {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 20px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.custom-h4 {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 20px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 600;
+    line-height: 32px;
+}
+
+h5 {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 16px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.custom-h5 {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 16px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.custom-h5-italic {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+h6 {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 14px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.custom-h6 {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 14px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.p-1-medium {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 24px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 500;
+    line-height: 40px;
+}
+
+.p-1-regular {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 24px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.p-2-regular-highl {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 20px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration-line: underline;
+}
+
+.p-2-regular {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 20px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.p-3 {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 18px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.p-4-medium {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 16px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 500;
+    line-height: 32px;
+}
+
+.p-4-regular {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 16px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.p-5 {
+    color: var(--my-primary-color);
+    font-family: var(--my-primary-font);
+    font-size: 14px;
+    font-style: var(--my-primary-font-style);
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.secondary-text {
+    color: #2975FF;
+    font-family: var(--my-primary-font);
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+  .my-card {
+    max-width: 276px;
+  }
+
+.care {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 24px;
+}
+.eye-care {
+    color: #2975FF;
+    background: rgba(41, 117, 255, 0.10);
+    width: fit-content;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 24px;
+}
+.sun-care {
+    color: #FFC123; 
+    background: rgba(255, 193, 35, 0.10);
+    width: fit-content;
+    padding: 8px 16px;
+    font-weight: 700;
+    border-radius: 24px;
+}
+.treatments {
+    color: #FF66A0;
+    background: rgba(255, 102, 160, 0.10);
+    width: fit-content;
+    padding: 8px 16px;
+    font-weight: 700;
+    border-radius: 24px;
+}
+.moisturizers {
+    color: #00CC96;
+    background: rgba(0, 204, 150, 0.10);
+    width: fit-content;
+    padding: 8px 16px;
+    font-weight: 700;
+    border-radius: 24px;
+}
+
+.display-none {
+    display: none;
+}
+
+.my-card-img {
+    width: 276px;
+    height: 276px;
+    border-radius: 32px;
+}
+
+.my-discount {
+    margin-right: 8px;
+}

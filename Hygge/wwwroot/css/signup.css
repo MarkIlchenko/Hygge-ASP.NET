@@ -1,0 +1,139 @@
+.input-container {
+    position: relative;
+}
+
+input {
+    height: 48px;
+    width: 280px;
+    border: 32px solid #F6F7FB;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 16px;
+}
+
+.label {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+input, .label .text {
+    font-family: 'Segoe UI';
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid blue;
+}
+
+input:focus + .label .text {
+    font-size: 12px;
+    transform: translate(0, -70%);
+    background-color: white;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: blue;
+}
+
+.label .text {
+    transition: all 0.15s ease-out;
+}
+
+input:focus + .label .text, :not(input[value=""]) + .label .text {
+    font-size: 12px;
+    transform: translate(0, -150%);
+    background-color: white;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.inputs-wrapper .input-container:first-child {
+    margin-bottom: 24px;
+}
+
+.next-button {
+    border-radius: 32px;
+    border: 2px solid var(--colors-accent-1-f-6-f-7-fb-100, #F6F7FB);
+    padding: 16px 40px;
+    color: var(--colors-text-dark-1-a-202-c-100, #1A202C);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.ml-12px {
+    margin-left: 12px;
+}
+
+.button-wrapper {
+    margin-top: 48px;
+}
+
+.progress-wrapper {
+    height: 4px;
+    border-radius: 50px;
+    background: #F6F7FB;
+    margin-top: 24px;
+}
+
+
+.progress-indicator {
+    width: 50%;
+    height: 4px;
+    border-radius: 50px;
+}
+
+.green-background {
+    background: #00CC96;
+}
+
+.terms-notifications {
+    color: var(--colors-text-dark-1-a-202-c-100, #1A202C);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    text-decoration-line: underline;
+}
+
+.option-container {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.success-wrapper {
+    color: #0f5132 !important;
+    background-color: #d1e7dd !important;
+    border-color: #badbcc !important;
+}
+
+/* Styling for radio buttons */
+input[type="radio"] {
+    appearance: none;
+    padding: 8px !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 24px !important;
+    max-height: 24px !important;
+    background: white ;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    border: 4px solid #F6F7FB !important;
+    margin-right: 12px;
+
+}
+
+input[type="radio"]:checked {
+    background-color: #FFF;
+    border: 6px solid #00CC96 !important;
+}
